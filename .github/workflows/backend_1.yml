@@ -17,9 +17,8 @@ jobs:
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v3
         with:
-          node-version: ${{ matrix.node-version }}
-          cache: "yarn"
-          cache-dependency-path: "./backend_1/yarn.json"
+          node-version: 16.x
+          cache: npm
         working-directory: "backend_1"
-        run: yarn
-      - run: yarn test
+        run: npm ci
+      - run: npm run test
