@@ -4,7 +4,6 @@ const compression = require("compression");
 const { json, urlencoded } = require("body-parser");
 
 const Route = require("./routers");
-
 const App = express();
 
 App.use(cors());
