@@ -1,8 +1,9 @@
 on:
-  # pull_request:
-  #   paths: ["backend_1/**"]
-  #   branches:
-  #     - master
+  pull_request:
+    paths:
+      - "backend_1/**"
+    branches:
+      - master
   push:
     paths:
       - "backend_1/**"
