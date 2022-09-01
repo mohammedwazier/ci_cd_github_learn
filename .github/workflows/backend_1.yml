@@ -1,0 +1,19 @@
+name: Running Test Backend 1
+
+on:
+  pull_request:
+    paths: ["backend_1/**"]
+    branches: [master]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 16
+      - run: cd backend_1
+      - run: npm ci
+      - run: npm test
