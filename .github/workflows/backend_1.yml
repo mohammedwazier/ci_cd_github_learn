@@ -8,12 +8,21 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: "backend_1"
+    strategy:
+      matrix:
+        node-version: [16.x]
 
     steps:
       - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
       - uses: actions/setup-node@v3
         with:
-          node-version: 16
-      - run: cd backend_1
-      - run: npm ci
-      - run: npm test
+          node-version: ${{ matrix.node-version }}
+          cache: "yarn"
+          cache-dependency-path: "./backend_1/yarn.json"
+      - name: run yarn command
+      - run: yarn
+      - run: yarn test
