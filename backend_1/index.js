@@ -15,7 +15,7 @@ App.use(urlencoded({ extended: false }));
 App.get("/", (_, res) => {
   res.status(200).json({
     state: true,
-    message: "Welcome to Backend1",
+    message: "Welcome to Backend_1",
   });
 });
 
