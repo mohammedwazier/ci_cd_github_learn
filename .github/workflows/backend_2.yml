@@ -1,14 +1,14 @@
 on:
   pull_request:
     paths:
-      - "backend_1/**"
+      - "backend_2/**"
     branches:
       - master
 
-name: Running Test Backend_1
+name: Running Test Backend_2
 jobs:
   build:
-    name: Auto Test Backend_1 ${{ github.run_id }} 🚀
+    name: Auto Test Backend_2 ${{ github.run_id }} 🚀
     runs-on: ubuntu-latest
 
     strategy:
@@ -22,10 +22,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "yarn"
-          cache-dependency-path: "backend_1/yarn.lock"
+          cache-dependency-path: "backend_2/yarn.lock"
       - name: install
         run: yarn install
-        working-directory: "backend_1"
+        working-directory: "backend_2"
       - name: yarn test
         run: npm run test
-        working-directory: "backend_1"
+        working-directory: "backend_2"
