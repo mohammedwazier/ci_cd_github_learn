@@ -6,7 +6,6 @@ const { json, urlencoded } = require("body-parser");
 const Route = require("./routers");
 
 const App = express();
-
 App.use(cors());
 App.use(compression());
 App.use(json());
