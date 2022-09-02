@@ -25,10 +25,10 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: ${{ matrix.node-version }}
-          cache: npm
+          cache: yarn
       - name: install
-        run: npm ci
+        run: yarn install
         working-directory: "backend_1"
-      - name: running test
+      - name: yarn test
         run: npm run test
         working-directory: "backend_1"
