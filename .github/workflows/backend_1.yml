@@ -26,7 +26,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: yarn
-          working-directory: "backend_1"
+          cache-dependency-path: "./backend_1/yarn.lock"
       - name: install
         run: yarn install
         working-directory: "backend_1"
